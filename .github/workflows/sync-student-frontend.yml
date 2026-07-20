@@ -1,0 +1,78 @@
+name: Sync ExamTree Student Frontend
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/sync-student-frontend.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-examtree-student-frontend
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out destination repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check out Functional-Interface source
+        uses: actions/checkout@v4
+        with:
+          repository: gurudhiman75-hash/Functional-Interface
+          ref: New-main
+          path: _source
+          fetch-depth: 1
+
+      - name: Copy student frontend to repository root
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          source_sha="$(git -C _source rev-parse HEAD)"
+          export_dir="$(mktemp -d)"
+
+          cp -a _source/artifacts/examtree/. "$export_dir/"
+          cp _source/pnpm-workspace.yaml "$export_dir/pnpm-workspace.yaml"
+
+          find . -mindepth 1 -maxdepth 1 \
+            ! -name '.git' \
+            ! -name '.github' \
+            ! -name '_source' \
+            -exec rm -rf {} +
+
+          rm -rf _source
+          cp -a "$export_dir/." .
+
+          cat > SYNC_SOURCE.md <<EOF
+          # Source synchronization
+
+          This repository is a lightweight Bolt-compatible mirror of the ExamTree student frontend.
+
+          Source: `gurudhiman75-hash/Functional-Interface`
+          Branch: `New-main`
+          Directory: `artifacts/examtree`
+          Source commit: `${source_sha}`
+          EOF
+
+      - name: Commit synchronized frontend
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Frontend is already synchronized."
+            exit 0
+          fi
+          git commit -m "Sync ExamTree student frontend from Functional-Interface"
+          git push origin main
