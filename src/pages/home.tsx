@@ -1,23 +1,6 @@
 import { useMemo, useState } from "react";
 import { useLocation } from "wouter";
-import {
-  ArrowRight,
-  BarChart3,
-  BookOpenCheck,
-  BrainCircuit,
-  CheckCircle2,
-  ChevronRight,
-  Clock3,
-  ClipboardList,
-  Flame,
-  Lock,
-  Search,
-  Sparkles,
-  Star,
-  TrendingUp,
-  Users,
-  Zap,
-} from "lucide-react";
+import { ArrowRight, ChartBar as BarChart3, BookOpenCheck, BrainCircuit, CircleCheck as CheckCircle2, ChevronRight, Clock3, ClipboardList, Flame, Lock, Search, Sparkles, Star, TrendingUp, Users, Zap } from "lucide-react";
 import { getActiveTestSessions, getAttempts } from "@/lib/storage";
 import { useExamCatalog } from "@/providers/ExamCatalogProvider";
 import { CategoryIcon } from "@/components/CategoryIcon";

@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { ArrowRight, BarChart3, BookOpen, CheckCircle2, Clock3, History, Target } from "lucide-react";
+import { ArrowRight, ChartBar as BarChart3, BookOpen, CircleCheck as CheckCircle2, Clock3, History, Target } from "lucide-react";
 import { Link } from "wouter";
 
 import { Badge } from "@/components/ui/badge";

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
-import { AlertCircle, Check, CreditCard } from "lucide-react";
+import { CircleAlert as AlertCircle, Check, CreditCard } from "lucide-react";
 import { getPackages, type Package } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 

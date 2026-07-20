@@ -1,9 +1,4 @@
-import {
-  Activity,
-  AlertTriangle,
-  Clock3,
-  Target,
-} from "lucide-react";
+import { Activity, TriangleAlert as AlertTriangle, Clock3, Target } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export type TopicNode = {

@@ -1,6 +1,6 @@
 import { useEffect, type ReactNode } from "react";
 import { Link } from "wouter";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CircleCheck as CheckCircle2 } from "lucide-react";
 
 interface PublicPageProps {
   eyebrow: string;

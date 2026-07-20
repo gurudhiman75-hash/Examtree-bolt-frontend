@@ -7,10 +7,7 @@ import {
 } from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import {
-  AlertCircle, BarChart3, Trophy, BookOpen, TrendingUp, TrendingDown,
-  Target, Zap, Award, Users, Minus, Clock, Timer, Filter, BarChart2,
-} from "lucide-react";
+import { CircleAlert as AlertCircle, ChartBar as BarChart3, Trophy, BookOpen, TrendingUp, TrendingDown, Target, Zap, Award, Users, Minus, Clock, Timer, ListFilter as Filter, ChartBar as BarChart2 } from "lucide-react";
 import { useExamCatalog } from "@/providers/ExamCatalogProvider";
 import { getUser } from "@/lib/storage";
 import { useQuery } from "@tanstack/react-query";

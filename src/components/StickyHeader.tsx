@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { BarChart3, ChevronDown, CircleUserRound, Compass, Search, X } from "lucide-react";
+import { ChartBar as BarChart3, ChevronDown, CircleUserRound, Compass, Search, X } from "lucide-react";
 import { useLocation } from "wouter";
 
 import { CategoryIcon } from "@/components/CategoryIcon";

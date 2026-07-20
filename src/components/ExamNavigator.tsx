@@ -1,22 +1,6 @@
 import { useMemo, useState } from "react";
 import { useLocation } from "wouter";
-import {
-  ArrowLeft,
-  BookOpen,
-  CalendarDays,
-  CheckCircle2,
-  ChevronRight,
-  Clock3,
-  ClipboardList,
-  Compass,
-  Lock,
-  Search,
-  Sparkles,
-  TrendingUp,
-  Unlock,
-  Users,
-  Zap,
-} from "lucide-react";
+import { ArrowLeft, BookOpen, CalendarDays, CircleCheck as CheckCircle2, ChevronRight, Clock3, ClipboardList, Compass, Lock, Search, Sparkles, TrendingUp, Clock as Unlock, Users, Zap } from "lucide-react";
 import type { Category, Subcategory, Test } from "@/lib/data";
 import {
   buildExamTreeNodes,

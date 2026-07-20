@@ -1,15 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation, useSearch } from "wouter";
-import {
-  BookOpen,
-  Mail,
-  Lock,
-  Eye,
-  EyeOff,
-  ArrowLeft,
-  Apple,
-  Chrome,
-} from "lucide-react";
+import { BookOpen, Mail, Lock, Eye, EyeOff, ArrowLeft, Apple, Chromium as Chrome } from "lucide-react";
 import { getFirebaseAuth } from "@/lib/firebase";
 import {
   completeGoogleRedirectSignIn,

@@ -1,20 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useLocation, useParams, useSearch } from "wouter";
 import { useQuery } from "@tanstack/react-query";
-import {
-  AlertCircle,
-  ArrowLeft,
-  CheckCircle,
-  ChevronLeft,
-  ChevronRight,
-  Clock,
-  Flag,
-  ListOrdered,
-  Lock,
-  RotateCcw,
-  Target,
-  XCircle,
-} from "lucide-react";
+import { CircleAlert as AlertCircle, ArrowLeft, CircleCheck as CheckCircle, ChevronLeft, ChevronRight, Clock, Flag, ListOrdered, Lock, RotateCcw, Target, Circle as XCircle } from "lucide-react";
 import { onAuthStateChanged } from "firebase/auth";
 import { getFirebaseAuth } from "@/lib/firebase";
 import { upsertUserProfile } from "@/lib/auth";

@@ -1,28 +1,7 @@
 import { useMemo, useState, useEffect, useCallback } from "react";
 import { useLocation } from "wouter";
 import { getLocalizedQuestion, LANGUAGE_LABELS, type Language } from "@/lib/lang-utils";
-import {
-  ArrowRight,
-  Award,
-  BarChart2,
-  BookOpen,
-  CheckCircle,
-  ChevronDown,
-  Clock,
-  ExternalLink,
-  Flag,
-  Lightbulb,
-  Lock,
-  Map,
-  MinusCircle,
-  RotateCcw,
-  Sparkles,
-  Target,
-  TimerReset,
-  Trophy,
-  TrendingUp,
-  XCircle,
-} from "lucide-react";
+import { ArrowRight, Award, ChartBar as BarChart2, BookOpen, CircleCheck as CheckCircle, ChevronDown, Clock, ExternalLink, Flag, Lightbulb, Lock, Map, CircleMinus as MinusCircle, RotateCcw, Sparkles, Target, TimerReset, Trophy, TrendingUp, Circle as XCircle } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { getAttemptRecords, getAttemptResponses, getAttempts, getPercentileHistory, getStreak, acknowledgeStreakCelebration, getUser, recordPercentile, recordDailyChallengeCompleted, isDailyChallengeCompletedToday, type TestAttempt } from "@/lib/storage";
 import { MicroReward, type Reward } from "@/components/MicroReward";

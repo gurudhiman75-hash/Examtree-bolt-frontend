@@ -1,14 +1,5 @@
 import { Link, useLocation } from "wouter";
-import {
-  ClipboardList,
-  Home,
-  LogOut,
-  Settings,
-  ShieldCheck,
-  Target,
-  User,
-  WandSparkles,
-} from "lucide-react";
+import { ClipboardList, Hop as Home, LogOut, Settings, ShieldCheck, Target, User, WandSparkles } from "lucide-react";
 import { signOut } from "firebase/auth";
 
 import { getFirebaseAuth } from "@/lib/firebase";
