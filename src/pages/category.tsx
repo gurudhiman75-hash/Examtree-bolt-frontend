@@ -1,4 +1,4 @@
-﻿import { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useLocation, useParams } from "wouter";
 import { ArrowLeft, BookOpen, ChevronRight, Clock3, Hash, LayoutGrid, Lock, Package, RotateCcw, ShieldCheck } from "lucide-react";
 import { getRuntimeExamGroups } from "@/lib/test-bank";

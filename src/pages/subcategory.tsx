@@ -1,4 +1,4 @@
-﻿import { useQueryClient, useQuery } from "@tanstack/react-query";
+import { useQueryClient, useQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
 import { useLocation, useParams } from "wouter";
 import {
