@@ -52,16 +52,16 @@ jobs:
           rm -rf _source
           cp -a "$export_dir/." .
 
-          cat > SYNC_SOURCE.md <<EOF
-          # Source synchronization
-
-          This repository is a lightweight Bolt-compatible mirror of the ExamTree student frontend.
-
-          Source: `gurudhiman75-hash/Functional-Interface`
-          Branch: `New-main`
-          Directory: `artifacts/examtree`
-          Source commit: `${source_sha}`
-          EOF
+          {
+            echo '# Source synchronization'
+            echo
+            echo 'This repository is a lightweight Bolt-compatible mirror of the ExamTree student frontend.'
+            echo
+            echo 'Source: `gurudhiman75-hash/Functional-Interface`'
+            echo 'Branch: `New-main`'
+            echo 'Directory: `artifacts/examtree`'
+            printf 'Source commit: `%s`\n' "$source_sha"
+          } > SYNC_SOURCE.md
 
       - name: Commit synchronized frontend
         shell: bash
