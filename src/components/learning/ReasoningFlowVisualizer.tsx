@@ -106,7 +106,7 @@ export function ReasoningFlowVisualizer({
       )}
     >
       <div className="mb-4">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-indigo-600">
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-600">
           Step-by-Step Logic Breakdown
         </p>
         <h2 className="mt-1 text-lg font-semibold">
@@ -151,7 +151,7 @@ export function ReasoningFlowVisualizer({
                     }
                     stroke={
                       isHighlighted
-                        ? "#4f46e5"
+                        ? "#1a56db"
                         : "#a1a1aa"
                     }
                     strokeWidth={
@@ -170,7 +170,7 @@ export function ReasoningFlowVisualizer({
                       height="44"
                       rx="5"
                       fill="none"
-                      stroke="#6366f1"
+                      stroke="#3b82f6"
                       strokeWidth="1"
                       initial={{ opacity: 0.8 }}
                       animate={{
@@ -224,7 +224,7 @@ export function ReasoningFlowVisualizer({
                   Number(event.target.value),
                 )
               }
-              className="w-full accent-indigo-600"
+              className="w-full accent-blue-600"
             />
             <div className="mt-2 flex justify-between text-xs text-zinc-500">
               <span>Step 1</span>
@@ -242,7 +242,7 @@ export function ReasoningFlowVisualizer({
               className={cn(
                 "rounded-md border p-3 text-sm transition",
                 index === activeIndex
-                  ? "border-indigo-300 bg-indigo-50 text-indigo-950 dark:border-indigo-900 dark:bg-indigo-950/40 dark:text-indigo-100"
+                  ? "border-blue-300 bg-blue-50 text-blue-950 dark:border-blue-900 dark:bg-blue-950/40 dark:text-blue-100"
                   : "border-zinc-200 bg-white text-zinc-600 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-400",
               )}
             >
@@ -253,7 +253,7 @@ export function ReasoningFlowVisualizer({
                 }
                 className="w-full text-left"
               >
-                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-indigo-600">
+                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-blue-600">
                   Step {step.step}
                 </span>
                 <p className="mt-1 leading-relaxed">

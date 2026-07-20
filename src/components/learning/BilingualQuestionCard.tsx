@@ -75,7 +75,7 @@ export function BilingualQuestionCard({
     >
       <div className="mb-4 flex items-center justify-between gap-3">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-indigo-600">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-600">
             Question
           </p>
           <h3 className="mt-1 text-sm font-semibold text-zinc-900 dark:text-zinc-100">
@@ -90,7 +90,7 @@ export function BilingualQuestionCard({
                 current === "en" ? "pa" : "en",
               )
             }
-            className="inline-flex items-center gap-2 rounded-md border border-zinc-200 px-3 py-1.5 text-xs font-medium text-zinc-700 hover:border-indigo-300 hover:text-indigo-700 dark:border-zinc-800 dark:text-zinc-300"
+            className="inline-flex items-center gap-2 rounded-md border border-zinc-200 px-3 py-1.5 text-xs font-medium text-zinc-700 hover:border-blue-300 hover:text-blue-700 dark:border-zinc-800 dark:text-zinc-300"
           >
             <Languages className="h-3.5 w-3.5" />
             Toggle Language

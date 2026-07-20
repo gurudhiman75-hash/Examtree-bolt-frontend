@@ -117,7 +117,7 @@ export function PerformanceStudyShell({
       {showHotkeys ? (
         <div className="fixed bottom-4 right-4 z-50 w-72 rounded-md border border-zinc-800 bg-black/95 p-4 text-zinc-100 shadow-none">
           <div className="flex items-center gap-2 text-sm font-semibold">
-            <Keyboard className="h-4 w-4 text-indigo-400" />
+            <Keyboard className="h-4 w-4 text-blue-400" />
             Hotkey Hints
           </div>
           <dl className="mt-3 grid grid-cols-[40px_1fr] gap-y-2 text-xs text-zinc-400">

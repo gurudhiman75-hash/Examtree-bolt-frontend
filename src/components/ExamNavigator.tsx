@@ -88,7 +88,7 @@ function SchematicEmptyState({ title, description }: { title: string; descriptio
   return (
     <div className="relative overflow-hidden rounded-2xl border border-dashed border-slate-300 bg-white/70 p-10 text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] backdrop-blur-md">
       <div className="absolute inset-x-8 top-6 h-px bg-gradient-to-r from-transparent via-teal-400/50 to-transparent" />
-      <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl border border-indigo-100 bg-indigo-50 text-indigo-700">
+      <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl border border-blue-100 bg-blue-50 text-blue-700">
         <Compass className="h-7 w-7" />
       </div>
       <h3 className="mt-5 text-lg font-semibold text-slate-950">{title}</h3>
@@ -139,10 +139,10 @@ export function ExamNavigator({ categories, subcategories, tests }: ExamNavigato
   return (
     <div className="mx-auto max-w-7xl space-y-6">
       <section className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white/70 p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] backdrop-blur-md">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(13,148,136,0.16),transparent_34%),radial-gradient(circle_at_top_left,rgba(79,70,229,0.14),transparent_32%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(13,148,136,0.16),transparent_34%),radial-gradient(circle_at_top_left,rgba(30,86,219,0.12),transparent_32%)]" />
         <div className="relative flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-md border border-indigo-100 bg-indigo-50 px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-indigo-800">
+            <div className="inline-flex items-center gap-2 rounded-md border border-blue-100 bg-blue-50 px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-blue-800">
               <Sparkles className="h-3.5 w-3.5" />
               Tests & Exams
             </div>
@@ -159,7 +159,7 @@ export function ExamNavigator({ categories, subcategories, tests }: ExamNavigato
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Search for an exam or topic..."
-              className="h-11 rounded-xl border-slate-200 bg-white/90 pl-10 shadow-sm focus-visible:ring-indigo-500"
+              className="h-11 rounded-xl border-slate-200 bg-white/90 pl-10 shadow-sm focus-visible:ring-blue-500"
             />
           </div>
         </div>
@@ -170,7 +170,7 @@ export function ExamNavigator({ categories, subcategories, tests }: ExamNavigato
           type="button"
           onClick={() => setTreeState({ activeCategory: null, activeSubCategory: null })}
           className={`rounded-md px-3 py-1.5 font-medium transition ${
-            !treeState.activeCategory ? "bg-indigo-950 text-white" : "bg-white text-slate-600 hover:text-slate-950"
+            !treeState.activeCategory ? "bg-slate-900 text-white" : "bg-white text-slate-600 hover:text-slate-950"
           }`}
         >
           Categories
@@ -182,7 +182,7 @@ export function ExamNavigator({ categories, subcategories, tests }: ExamNavigato
               type="button"
               onClick={() => setTreeState({ activeCategory: activeCategory.id, activeSubCategory: null })}
               className={`rounded-md px-3 py-1.5 font-medium transition ${
-                !treeState.activeSubCategory ? "bg-indigo-950 text-white" : "bg-white text-slate-600 hover:text-slate-950"
+                !treeState.activeSubCategory ? "bg-slate-900 text-white" : "bg-white text-slate-600 hover:text-slate-950"
               }`}
             >
               {activeCategory.name}
@@ -206,10 +206,10 @@ export function ExamNavigator({ categories, subcategories, tests }: ExamNavigato
               key={category.id}
               type="button"
               onClick={() => setTreeState({ activeCategory: category.id, activeSubCategory: null })}
-              className="group rounded-2xl border border-slate-200 bg-white p-5 text-left shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 hover:shadow-[0_20px_46px_rgb(30,27,75,0.12)] focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+              className="group rounded-2xl border border-slate-200 bg-white p-5 text-left shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-[0_20px_46px_rgb(30,86,219,0.12)] focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
             >
               <div className="flex items-start justify-between gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-950 text-white shadow-[0_12px_30px_rgba(30,27,75,0.18)]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-900 text-white shadow-[0_12px_30px_rgba(15,23,42,0.18)]">
                   <CategoryIcon icon={category.icon} className="h-6 w-6" />
                 </div>
                 <span className="rounded-md border border-amber-200 bg-amber-50 px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-amber-700">
@@ -234,7 +234,7 @@ export function ExamNavigator({ categories, subcategories, tests }: ExamNavigato
                   </p>
                 </div>
               </div>
-              <div className="mt-5 flex items-center justify-between text-sm font-semibold text-indigo-800">
+              <div className="mt-5 flex items-center justify-between text-sm font-semibold text-blue-700">
                 <span>Open category</span>
                 <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </div>
@@ -263,7 +263,7 @@ export function ExamNavigator({ categories, subcategories, tests }: ExamNavigato
                   onClick={() => setTreeState({ activeCategory: category.id, activeSubCategory: null })}
                   className={`flex w-full items-center justify-between rounded-xl px-3 py-2.5 text-left text-sm transition-all duration-300 ${
                     category.id === activeCategory.id
-                      ? "bg-indigo-950 text-white shadow-[0_8px_24px_rgba(30,27,75,0.18)]"
+                      ? "bg-slate-900 text-white shadow-[0_8px_24px_rgba(15,23,42,0.18)]"
                       : "text-slate-600 hover:bg-slate-100 hover:text-slate-950"
                   }`}
                 >
@@ -308,7 +308,7 @@ export function ExamNavigator({ categories, subcategories, tests }: ExamNavigato
                   key={subcategory.id}
                   type="button"
                   onClick={() => setTreeState({ activeCategory: activeCategory.id, activeSubCategory: subcategory.id })}
-                  className="group rounded-2xl border border-slate-200 bg-white p-5 text-left shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-teal-300 hover:shadow-[0_20px_46px_rgb(13,148,136,0.12)] focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+                  className="group rounded-2xl border border-slate-200 bg-white p-5 text-left shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-teal-300 hover:shadow-[0_20px_46px_rgb(13,148,136,0.12)] focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-50 text-teal-700">
@@ -410,7 +410,7 @@ export function ExamNavigator({ categories, subcategories, tests }: ExamNavigato
                 return (
                   <article
                     key={test.id}
-                    className={`rounded-2xl border border-slate-200 border-l-4 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:ring-2 hover:ring-indigo-500 hover:ring-offset-2 ${status.border} ${status.glow}`}
+                    className={`rounded-2xl border border-slate-200 border-l-4 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:ring-2 hover:ring-blue-500 hover:ring-offset-2 ${status.border} ${status.glow}`}
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div>
@@ -450,7 +450,7 @@ export function ExamNavigator({ categories, subcategories, tests }: ExamNavigato
                         {Array.from({ length: 5 }).map((_, index) => (
                           <span
                             key={index}
-                            className={`h-1.5 w-7 rounded-sm ${index < getReasoningLevel(test) ? "bg-indigo-600" : "bg-slate-200"}`}
+                            className={`h-1.5 w-7 rounded-sm ${index < getReasoningLevel(test) ? "bg-blue-600" : "bg-slate-200"}`}
                           />
                         ))}
                       </div>
@@ -510,7 +510,7 @@ export function ExamNavigator({ categories, subcategories, tests }: ExamNavigato
                     {Array.from({ length: 5 }).map((_, index) => (
                       <span
                         key={index}
-                        className={`h-2 flex-1 rounded-sm ${index < getReasoningLevel(selectedTest) ? "bg-indigo-600" : "bg-slate-200"}`}
+                        className={`h-2 flex-1 rounded-sm ${index < getReasoningLevel(selectedTest) ? "bg-blue-600" : "bg-slate-200"}`}
                       />
                     ))}
                   </div>

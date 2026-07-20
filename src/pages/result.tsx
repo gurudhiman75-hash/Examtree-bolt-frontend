@@ -69,7 +69,7 @@ type ReviewItem = {
 function getGrade(score: number) {
   if (score >= 90) return { label: "Outstanding", color: "text-emerald-600", bg: "bg-emerald-50 dark:bg-emerald-900/20" };
   if (score >= 80) return { label: "Excellent", color: "text-blue-600", bg: "bg-blue-50 dark:bg-blue-900/20" };
-  if (score >= 70) return { label: "Good", color: "text-violet-600", bg: "bg-violet-50 dark:bg-violet-900/20" };
+  if (score >= 70) return { label: "Good", color: "text-blue-600", bg: "bg-blue-50 dark:bg-blue-900/20" };
   if (score >= 60) return { label: "Average", color: "text-amber-600", bg: "bg-amber-50 dark:bg-amber-900/20" };
   return { label: "Needs Work", color: "text-red-600", bg: "bg-red-50 dark:bg-red-900/20" };
 }
@@ -565,13 +565,13 @@ export default function Result() {
 
         <Tabs defaultValue={requestedTab} className="space-y-8">
           <TabsList className="grid h-auto w-full grid-cols-3 rounded-md border border-border bg-muted/45 p-1 shadow-sm">
-            <TabsTrigger value="summary" className="rounded-md border border-transparent py-2.5 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground data-[state=active]:border-indigo-500/30 data-[state=active]:bg-background data-[state=active]:text-indigo-600 data-[state=active]:shadow-sm">
+            <TabsTrigger value="summary" className="rounded-md border border-transparent py-2.5 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground data-[state=active]:border-blue-500/30 data-[state=active]:bg-background data-[state=active]:text-blue-600 data-[state=active]:shadow-sm">
               Summary
             </TabsTrigger>
-            <TabsTrigger value="analysis" className="rounded-md border border-transparent py-2.5 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground data-[state=active]:border-indigo-500/30 data-[state=active]:bg-background data-[state=active]:text-indigo-600 data-[state=active]:shadow-sm">
+            <TabsTrigger value="analysis" className="rounded-md border border-transparent py-2.5 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground data-[state=active]:border-blue-500/30 data-[state=active]:bg-background data-[state=active]:text-blue-600 data-[state=active]:shadow-sm">
               Analysis
             </TabsTrigger>
-            <TabsTrigger value="review" className="rounded-md border border-transparent py-2.5 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground data-[state=active]:border-indigo-500/30 data-[state=active]:bg-background data-[state=active]:text-indigo-600 data-[state=active]:shadow-sm">
+            <TabsTrigger value="review" className="rounded-md border border-transparent py-2.5 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground data-[state=active]:border-blue-500/30 data-[state=active]:bg-background data-[state=active]:text-blue-600 data-[state=active]:shadow-sm">
               Review
             </TabsTrigger>
           </TabsList>
@@ -610,7 +610,7 @@ export default function Result() {
                 { icon: <CheckCircle className="w-5 h-5" />, label: "Correct", value: latest.correct, color: "text-emerald-700 dark:text-emerald-300", bg: "bg-emerald-100 dark:bg-emerald-900/40", cardBg: "bg-gradient-to-br from-emerald-50 to-emerald-100/50 dark:from-emerald-950/40 dark:to-emerald-900/20", borderColor: "border-emerald-200 dark:border-emerald-800" },
                 { icon: <XCircle className="w-5 h-5" />, label: "Wrong", value: latest.wrong, color: "text-red-700 dark:text-red-300", bg: "bg-red-100 dark:bg-red-900/40", cardBg: "bg-gradient-to-br from-red-50 to-red-100/50 dark:from-red-950/40 dark:to-red-900/20", borderColor: "border-red-200 dark:border-red-800" },
                 { icon: <MinusCircle className="w-5 h-5" />, label: "Skipped", value: latest.unanswered, color: "text-orange-700 dark:text-orange-300", bg: "bg-orange-100 dark:bg-orange-900/40", cardBg: "bg-gradient-to-br from-orange-50 to-orange-100/50 dark:from-orange-950/40 dark:to-orange-900/20", borderColor: "border-orange-200 dark:border-orange-800" },
-                { icon: <Clock className="w-5 h-5" />, label: "Time Spent", value: `${latest.timeSpent}m`, color: "text-violet-700 dark:text-violet-300", bg: "bg-violet-100 dark:bg-violet-900/40", cardBg: "bg-gradient-to-br from-violet-50 to-violet-100/50 dark:from-violet-950/40 dark:to-violet-900/20", borderColor: "border-violet-200 dark:border-violet-800" },
+                { icon: <Clock className="w-5 h-5" />, label: "Time Spent", value: `${latest.timeSpent}m`, color: "text-blue-700 dark:text-blue-300", bg: "bg-blue-100 dark:bg-blue-900/40", cardBg: "bg-gradient-to-br from-blue-50 to-blue-100/50 dark:from-blue-950/40 dark:to-blue-900/20", borderColor: "border-blue-200 dark:border-blue-800" },
               ].map((item) => (
                 <div key={item.label} className={`${item.cardBg} border ${item.borderColor} rounded-2xl p-5 shadow-md text-center transition-transform hover:scale-105 hover:shadow-lg`} data-testid={`stat-${item.label.toLowerCase()}`}>
                   <div className={`w-10 h-10 ${item.bg} rounded-lg flex items-center justify-center ${item.color} mx-auto mb-3`}>
@@ -1058,7 +1058,7 @@ export default function Result() {
                 : 0;
               if (skipRate >= 20) {
                 insights.push({
-                  icon: <MinusCircle className="w-4 h-4 text-violet-500 shrink-0 mt-0.5" />,
+                  icon: <MinusCircle className="w-4 h-4 text-blue-500 shrink-0 mt-0.5" />,
                   text: `You skipped ${latest.unanswered} questions (${skipRate}% of the test). Try elimination strategies on unsure questions rather than leaving them blank.`,
                 });
               }
@@ -1431,8 +1431,8 @@ export default function Result() {
                   value: `${latest.timeSpent} min`,
                   sub: `${latest.totalQuestions} questions`,
                   icon: <Clock className="w-5 h-5" />,
-                  color: "text-violet-600",
-                  bg: "bg-violet-50 dark:bg-violet-900/20",
+                  color: "text-blue-600",
+                  bg: "bg-blue-50 dark:bg-blue-900/20",
                 },
                 {
                   label: "Avg / Question",
@@ -1550,7 +1550,7 @@ export default function Result() {
                               <span className="text-muted-foreground">{section.unanswered} skipped</span>
                               <span className="text-muted-foreground">{section.totalQuestions} total</span>
                               {sTime && (
-                                <span className="text-violet-600 font-medium">{sTime.minutesSpent} min</span>
+                                <span className="text-blue-600 font-medium">{sTime.minutesSpent} min</span>
                               )}
                               {avgSQ !== undefined && (
                                 <span className="text-amber-600 font-medium">~{avgSQ}s per question</span>
@@ -1616,13 +1616,13 @@ export default function Result() {
                           <div className="flex-1">
                             <div className="w-full bg-muted rounded-full h-2.5">
                               <div
-                                className="h-2.5 rounded-full bg-violet-500 transition-all duration-700"
+                                className="h-2.5 rounded-full bg-blue-500 transition-all duration-700"
                                 style={{ width: `${(section.minutesSpent / maxMin) * 100}%` }}
                               />
                             </div>
                           </div>
                           <div className="shrink-0 text-right w-20">
-                            <div className="text-sm font-semibold text-violet-600 tabular-nums">
+                            <div className="text-sm font-semibold text-blue-600 tabular-nums">
                               {section.minutesSpent} min
                             </div>
                             {avgSQ !== undefined && (
@@ -2261,7 +2261,7 @@ export default function Result() {
                               </span>
                             )}
                             {nameClashTrap ? (
-                              <span className="rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700">
+                              <span className="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
                                 Tripped by NameClash
                               </span>
                             ) : null}

@@ -1202,7 +1202,7 @@ function TestRunner({ test, showSuccessMessage, initialMode, subcategoryLanguage
                   onClick={toggleReview}
                   className={`rounded-md border px-4 py-2 text-sm font-medium transition ${
                     currentQuestionFlagged
-                      ? "border-violet-400 bg-violet-50 text-violet-700"
+                      ? "border-blue-400 bg-blue-50 text-blue-700"
                       : "border-gray-300 bg-white text-gray-700 hover:bg-gray-100"
                   }`}
                 >
@@ -1276,7 +1276,7 @@ function TestRunner({ test, showSuccessMessage, initialMode, subcategoryLanguage
                   <span className="text-gray-700">Not Answered</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-violet-600 text-[10px] font-bold text-white">{statusCounts.MARKED}</span>
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-600 text-[10px] font-bold text-white">{statusCounts.MARKED}</span>
                   <span className="text-gray-700">Marked</span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -1314,7 +1314,7 @@ function TestRunner({ test, showSuccessMessage, initialMode, subcategoryLanguage
                           const paletteClass = isCurrent
                             ? "bg-blue-600 text-white"
                             : isMarked
-                            ? "bg-violet-600 text-white"
+                            ? "bg-blue-600 text-white"
                             : status === "ANSWERED"
                             ? "bg-green-500 text-white"
                             : status === "NOT_ANSWERED"
@@ -1831,7 +1831,7 @@ export default function Test() {
             <div className="mt-5">
               <Button
                 variant="outline"
-                className="w-full border-purple-300 text-purple-700 hover:bg-purple-50"
+                className="w-full border-blue-300 text-blue-700 hover:bg-blue-50"
                 onClick={() => setLocation(`/result?testId=${encodeURIComponent(id!)}`)}
               >
                 View Solutions &amp; Review

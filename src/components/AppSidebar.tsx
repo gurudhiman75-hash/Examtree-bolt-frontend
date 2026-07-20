@@ -26,31 +26,30 @@ import {
 } from "@/components/ui/sidebar";
 
 const primaryLinks = [
-  { href: "/", label: "Home", icon: Home },
-  { href: "/tests", label: "Tests & Exams", icon: ClipboardList },
-  { href: "/dashboard", label: "My Activity", icon: Target },
+  { href: "/",          label: "Home",          icon: Home         },
+  { href: "/tests",     label: "Tests & Exams",  icon: ClipboardList },
+  { href: "/dashboard", label: "My Activity",    icon: Target       },
 ];
 
 export function AppSidebar() {
   const [location, setLocation] = useLocation();
-  const user = getUser();
+  const user  = getUser();
   const { toast } = useToast();
   const isAdmin = user?.role === "admin";
+
   const links = isAdmin
     ? [
         ...primaryLinks,
-        { href: "/admin", label: "Admin", icon: ShieldCheck },
-        { href: "/admin/content/questions/generate", label: "Question Studio", icon: WandSparkles },
+        { href: "/admin",                                    label: "Admin",           icon: ShieldCheck   },
+        { href: "/admin/content/questions/generate",         label: "Question Studio", icon: WandSparkles  },
       ]
     : primaryLinks;
 
   const handleLogout = async () => {
     const auth = getFirebaseAuth();
-    try {
-      if (auth) await signOut(auth);
-    } catch {
-      // Keep local logout resilient.
-    } finally {
+    try   { if (auth) await signOut(auth); }
+    catch { /* resilient */ }
+    finally {
       clearAuth();
       toast({ title: "Logged out", description: "Your session has ended." });
       setLocation("/");
@@ -59,38 +58,52 @@ export function AppSidebar() {
 
   return (
     <Sidebar
-      className="border-r border-indigo-900 bg-[#1e1b4b] text-slate-200 [&_[data-sidebar=sidebar]]:border-indigo-900 [&_[data-sidebar=sidebar]]:bg-[#1e1b4b] [&_[data-slot=sidebar-inner]]:bg-[#1e1b4b]"
+      className={[
+        "border-r border-[hsl(220_25%_17%)]",
+        "bg-[hsl(222_47%_8%)] text-slate-200",
+        "[&_[data-sidebar=sidebar]]:border-[hsl(220_25%_17%)]",
+        "[&_[data-sidebar=sidebar]]:bg-[hsl(222_47%_8%)]",
+        "[&_[data-slot=sidebar-inner]]:bg-[hsl(222_47%_8%)]",
+      ].join(" ")}
       collapsible="icon"
     >
-      <SidebarHeader className="border-b border-indigo-900 px-4 py-4">
-        <Link href="/" className="flex items-center gap-3 rounded-md px-1 py-1">
-          <div className="flex h-8 w-8 items-center justify-center rounded-md bg-indigo-600 text-white">
-            <span className="text-sm font-semibold">E</span>
+      {/* ── Logo ── */}
+      <SidebarHeader className="border-b border-[hsl(220_25%_17%)] px-4 py-4">
+        <Link href="/" className="flex items-center gap-3 rounded-lg px-1 py-1 transition hover:bg-white/5">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600 text-white shadow-[0_0_0_1px_rgba(96,165,250,.3)]">
+            <span className="text-sm font-bold tracking-tight">E</span>
           </div>
           <div className="min-w-0">
-            <p className="truncate text-sm font-semibold tracking-tight text-white">examtree</p>
-            <p className="truncate text-[11px] font-medium text-slate-300">Tree of success</p>
+            <p className="truncate text-sm font-bold tracking-tight text-white">examtree</p>
+            <p className="truncate text-[11px] font-medium text-slate-400">Tree of success</p>
           </div>
         </Link>
       </SidebarHeader>
 
+      {/* ── Nav links ── */}
       <SidebarContent className="px-3 py-4">
-        <SidebarMenu className="space-y-1">
+        <SidebarMenu className="space-y-0.5">
           {links.map((link) => {
             const active =
               location === link.href
-              || (link.href === "/tests" && (location.startsWith("/category") || location.startsWith("/subcategory")))
+              || (link.href === "/tests"     && (location.startsWith("/category") || location.startsWith("/subcategory")))
               || (link.href === "/dashboard" && location.startsWith("/test/"));
+
             return (
               <SidebarMenuItem key={link.href}>
                 <SidebarMenuButton
                   asChild
                   isActive={active}
                   tooltip={link.label}
-                  className="rounded-md border border-transparent border-l-2 px-3 py-2 text-sm font-medium text-slate-200 transition hover:bg-indigo-950 hover:text-white data-[active=true]:border-l-teal-300 data-[active=true]:bg-indigo-950 data-[active=true]:text-white"
+                  className={[
+                    "rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-150",
+                    "text-slate-300 hover:bg-white/8 hover:text-white",
+                    "data-[active=true]:bg-blue-600/15 data-[active=true]:text-blue-300",
+                    "data-[active=true]:border-l-2 data-[active=true]:border-blue-500 data-[active=true]:pl-[10px]",
+                  ].join(" ")}
                 >
                   <Link href={link.href} className="flex items-center gap-3">
-                    <link.icon className="h-4 w-4" />
+                    <link.icon className="h-4 w-4 shrink-0" />
                     <span>{link.label}</span>
                   </Link>
                 </SidebarMenuButton>
@@ -100,19 +113,20 @@ export function AppSidebar() {
         </SidebarMenu>
       </SidebarContent>
 
-      <SidebarFooter className="border-t border-indigo-900 p-3">
+      {/* ── User footer ── */}
+      <SidebarFooter className="border-t border-[hsl(220_25%_17%)] p-3">
         {user ? (
-          <div className="flex items-center gap-2 rounded-md border border-indigo-800 bg-indigo-950/70 p-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-md bg-indigo-900 text-slate-200">
+          <div className="flex items-center gap-2 rounded-xl border border-white/8 bg-white/5 p-2.5 backdrop-blur-sm">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600/20 text-blue-300 ring-1 ring-blue-500/25">
               {isAdmin ? <ShieldCheck className="h-4 w-4" /> : <User className="h-4 w-4" />}
             </div>
             <div className="min-w-0 flex-1">
               <p className="truncate text-xs font-semibold text-white">{user.name}</p>
-              <p className="truncate text-[11px] text-slate-300">{isAdmin ? "Administrator" : "Student"}</p>
+              <p className="truncate text-[11px] text-slate-400">{isAdmin ? "Administrator" : "Student"}</p>
             </div>
             <Link
               href="/profile"
-              className="rounded-md p-1.5 text-slate-300 transition hover:bg-indigo-900 hover:text-white"
+              className="rounded-lg p-1.5 text-slate-400 transition hover:bg-white/8 hover:text-white"
               aria-label="Settings"
             >
               <Settings className="h-4 w-4" />
@@ -120,7 +134,7 @@ export function AppSidebar() {
             <button
               type="button"
               onClick={handleLogout}
-              className="rounded-md p-1.5 text-slate-300 transition hover:bg-rose-500/10 hover:text-rose-300"
+              className="rounded-lg p-1.5 text-slate-400 transition hover:bg-rose-500/15 hover:text-rose-300"
               aria-label="Logout"
             >
               <LogOut className="h-4 w-4" />
@@ -129,9 +143,9 @@ export function AppSidebar() {
         ) : (
           <SidebarMenuButton
             asChild
-            className="rounded-md border border-indigo-800 bg-indigo-950/70 text-slate-200 hover:bg-indigo-900 hover:text-white"
+            className="rounded-xl border border-blue-500/30 bg-blue-600/10 text-blue-300 hover:bg-blue-600/20 hover:text-blue-200 font-semibold"
           >
-            <Link href="/login/student">Login</Link>
+            <Link href="/login/student">Sign in</Link>
           </SidebarMenuButton>
         )}
       </SidebarFooter>

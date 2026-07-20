@@ -279,12 +279,12 @@ export default function Login() {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-zinc-50 dark:bg-slate-950">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(79,70,229,0.14),transparent_28%),radial-gradient(circle_at_80%_0%,rgba(15,23,42,0.10),transparent_25%),linear-gradient(180deg,rgba(255,255,255,0.8),rgba(250,250,250,1))] dark:bg-[radial-gradient(circle_at_20%_10%,rgba(99,102,241,0.18),transparent_28%),radial-gradient(circle_at_80%_0%,rgba(16,185,129,0.10),transparent_25%),linear-gradient(180deg,#020617,#020617)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(30,86,219,0.14),transparent_28%),radial-gradient(circle_at_80%_0%,rgba(15,23,42,0.10),transparent_25%),linear-gradient(180deg,rgba(255,255,255,0.8),rgba(250,250,250,1))] dark:bg-[radial-gradient(circle_at_20%_10%,rgba(30,86,219,0.18),transparent_28%),radial-gradient(circle_at_80%_0%,rgba(16,185,129,0.10),transparent_25%),linear-gradient(180deg,#020617,#020617)]" />
       <div className="relative mx-auto flex min-h-screen max-w-md items-center px-4 py-10">
         <section className="w-full rounded-md border border-zinc-200 bg-white p-7 shadow-sm dark:border-slate-800 dark:bg-slate-900">
           <div className="mb-6 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-md border border-indigo-500/25 bg-indigo-600 text-white">
+              <div className="flex h-10 w-10 items-center justify-center rounded-md border border-blue-500/25 bg-blue-600 text-white">
                 <BookOpen className="w-6 h-6" />
               </div>
               <div>
@@ -372,7 +372,7 @@ export default function Login() {
                 <div className="absolute inset-x-0 bottom-0 h-0.5 overflow-hidden rounded-b-md bg-zinc-200 dark:bg-slate-800">
                   <div
                     className={`h-full transition-all duration-300 ${
-                      capsLockActive ? "bg-rose-500" : passwordStrength >= 75 ? "bg-emerald-500" : "bg-indigo-600"
+                      capsLockActive ? "bg-rose-500" : passwordStrength >= 75 ? "bg-emerald-500" : "bg-blue-600"
                     }`}
                     style={{ width: `${password ? passwordStrength : 0}%` }}
                   />
@@ -395,7 +395,7 @@ export default function Login() {
               </div>
             )}
 
-            <Button type="submit" className="w-full rounded-md bg-indigo-600 py-5 text-sm font-semibold text-white hover:bg-indigo-700" disabled={loading} data-testid="btn-submit">
+            <Button type="submit" className="w-full rounded-md bg-blue-600 py-5 text-sm font-semibold text-white hover:bg-blue-700" disabled={loading} data-testid="btn-submit">
               {loading ? "Please wait..." : isAdminMode ? "Enter Admin Console" : tab === "login" ? "Login to Account" : "Create Account"}
             </Button>
             {!isAdminMode && (
@@ -427,8 +427,8 @@ export default function Login() {
               </p>
             </div>
           ) : (
-            <div className="mt-6 rounded-md border border-indigo-500/15 bg-indigo-500/5 p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-indigo-600">Workspace access</p>
+            <div className="mt-6 rounded-md border border-blue-500/15 bg-blue-500/5 p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">Workspace access</p>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
                 <div className="rounded-md bg-white p-3 dark:bg-slate-950">
                   <p className="text-sm font-semibold text-foreground">Concept Mastery</p>

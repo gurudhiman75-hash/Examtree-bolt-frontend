@@ -67,7 +67,7 @@ export default function PackagesPage() {
               Unlock full mock series, detailed analytics, and complete reasoning playback for serious preparation.
             </p>
           </div>
-          <CreditCard className="hidden h-8 w-8 text-indigo-600 lg:block" />
+          <CreditCard className="hidden h-8 w-8 text-blue-600 lg:block" />
         </div>
       </section>
 
@@ -81,7 +81,7 @@ export default function PackagesPage() {
               <article
                 key={pkg.id}
                 className={`rounded-md border bg-white p-5 shadow-sm dark:bg-slate-900 ${
-                  pkg.isPopular ? "border-indigo-500" : "border-zinc-200 dark:border-slate-800"
+                  pkg.isPopular ? "border-blue-500" : "border-zinc-200 dark:border-slate-800"
                 }`}
               >
                 <div className="mb-5 flex items-start justify-between gap-3">
@@ -120,7 +120,7 @@ export default function PackagesPage() {
                 </ul>
 
                 <Link href={`/packages/${pkg.id}`}>
-                  <Button className="w-full rounded-md bg-indigo-600 hover:bg-indigo-700">
+                  <Button className="w-full rounded-md bg-blue-600 hover:bg-blue-700">
                     Get All-Access
                   </Button>
                 </Link>
@@ -136,7 +136,7 @@ export default function PackagesPage() {
             <tr>
               <th className="px-5 py-3 text-left font-semibold">Unlock</th>
               <th className="px-5 py-3 text-left font-semibold">Free</th>
-              <th className="px-5 py-3 text-left font-semibold text-indigo-600">All-Access</th>
+              <th className="px-5 py-3 text-left font-semibold text-blue-600">All-Access</th>
             </tr>
           </thead>
           <tbody>

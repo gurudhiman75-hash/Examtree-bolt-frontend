@@ -513,7 +513,7 @@ export function GeneratorHub() {
         <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
           <div>
             <div className="flex items-center gap-2">
-              <Languages className="h-4 w-4 text-indigo-300" />
+              <Languages className="h-4 w-4 text-blue-300" />
               <h2 className="text-lg font-semibold tracking-tight">
                 Generator Hub
               </h2>
@@ -535,7 +535,7 @@ export function GeneratorHub() {
                 onClick={() => toggleLanguage(language)}
                 className={`rounded-md border px-3 py-1.5 text-sm font-semibold transition ${
                   previewLanguages.includes(language)
-                    ? "border-indigo-500 bg-indigo-600 text-white"
+                    ? "border-blue-500 bg-blue-600 text-white"
                     : "border-blue-900 bg-blue-950 text-slate-400 hover:border-slate-500 hover:text-white"
                 } ${language === "en" ? "cursor-not-allowed opacity-95" : ""}`}
               >
@@ -560,7 +560,7 @@ export function GeneratorHub() {
               <select
                 value={activePattern}
                 onChange={(event) => changePattern(event.target.value)}
-                className="mt-2 h-10 w-full rounded-md border border-slate-300 bg-white px-3 text-sm font-medium text-slate-950 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
+                className="mt-2 h-10 w-full rounded-md border border-slate-300 bg-white px-3 text-sm font-medium text-slate-950 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
               >
                 {patternOptions.map((pattern) => (
                   <option key={pattern.id} value={pattern.id}>
@@ -583,7 +583,7 @@ export function GeneratorHub() {
                     onClick={() => toggleLanguage(language)}
                     className={`rounded-md border px-3 py-1.5 text-sm font-semibold transition ${
                       previewLanguages.includes(language)
-                        ? "border-indigo-500 bg-indigo-600 text-white"
+                        ? "border-blue-500 bg-blue-600 text-white"
                         : "border-slate-300 bg-white text-slate-500 hover:border-slate-400 hover:text-slate-950"
                     } ${language === "en" ? "cursor-not-allowed opacity-95" : ""}`}
                   >
@@ -601,7 +601,7 @@ export function GeneratorHub() {
                 onChange={(event) =>
                   setEnableNameClash(event.target.checked)
                 }
-                className="mt-1 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                className="mt-1 h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
               />
               <span>
                 <span className="block text-sm font-semibold text-slate-950">
@@ -709,7 +709,7 @@ export function GeneratorHub() {
             <Button
               type="button"
               disabled={isAmbiguous}
-              className="w-full rounded-md bg-indigo-600 hover:bg-indigo-700 disabled:cursor-not-allowed disabled:bg-slate-400"
+              className="w-full rounded-md bg-blue-600 hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-slate-400"
               onClick={handleSave}
             >
               {saved ? (

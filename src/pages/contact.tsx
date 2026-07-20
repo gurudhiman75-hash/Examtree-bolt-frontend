@@ -40,7 +40,7 @@ export default function Contact() {
             <Label>Message</Label>
             <Textarea className="mt-1 min-h-32 rounded-md bg-white" placeholder="Share test name, question ID, or issue details." />
           </div>
-          <Button type="button" className="mt-5 rounded-md bg-[#1e1b4b] text-white hover:bg-indigo-950">
+          <Button type="button" className="mt-5 rounded-md bg-slate-900 text-white hover:bg-slate-950">
             <Send className="mr-2 h-4 w-4" />
             Send request
           </Button>
@@ -55,7 +55,7 @@ export default function Contact() {
           </PublicCard>
           <PublicCard title="Future channels">
             <div className="flex items-center gap-2 font-semibold text-slate-950">
-              <MessageCircle className="h-4 w-4 text-indigo-700" />
+              <MessageCircle className="h-4 w-4 text-blue-700" />
               WhatsApp, Telegram, and Discord support are planned.
             </div>
           </PublicCard>

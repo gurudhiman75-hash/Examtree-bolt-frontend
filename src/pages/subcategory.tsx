@@ -45,13 +45,13 @@ const TAB_DESCRIPTIONS: Record<ExamTab, string> = {
 };
 
 const CATEGORY_STYLES: Record<string, string> = {
-  blue: "linear-gradient(to right, #0ea5e9, #3b82f6, #6366f1)",
+  blue: "linear-gradient(to right, #0ea5e9, #3b82f6, #1a56db)",
   emerald: "linear-gradient(to right, #10b981, #14b8a6, #06b6d4)",
-  violet: "linear-gradient(to right, #8b5cf6, #d946ef, #ec4899)",
+  violet: "linear-gradient(to right, #0d9488, #1a56db, #06b6d4)",
   amber: "linear-gradient(to right, #f59e0b, #f97316, #f43f5e)",
   orange: "linear-gradient(to right, #f97316, #f59e0b, #eab308)",
   rose: "linear-gradient(to right, #f43f5e, #ec4899, #d946ef)",
-  indigo: "linear-gradient(to right, #6366f1, #3b82f6, #06b6d4)",
+  indigo: "linear-gradient(to right, #1a56db, #3b82f6, #06b6d4)",
   red: "linear-gradient(to right, #ef4444, #f43f5e, #f97316)",
 };
 
@@ -317,7 +317,7 @@ export default function SubcategoryPage() {
           <div className="min-w-0 flex-1">
 
             {/* Exam header — subtle hero banner */}
-            <div className="mb-6 rounded-2xl overflow-hidden border border-sky-80 bg-gradient-to-br from-sky-50 via-slate-50 to-indigo-50 px-5 py-6 shadow-sm">
+            <div className="mb-6 rounded-2xl overflow-hidden border border-sky-80 bg-gradient-to-br from-sky-50 via-slate-50 to-blue-50 px-5 py-6 shadow-sm">
               <div className="inline-flex items-center rounded-full px-3 py-1 mb-3" style={{ backgroundImage: gradient }}>
                 <span className="text-[11px] font-bold uppercase tracking-widest text-white/90">{category?.name}</span>
               </div>
@@ -466,7 +466,7 @@ export default function SubcategoryPage() {
                   const borderAccent = attempted
                     ? "border-l-sky-400"
                     : !isLocked || pkgOwned
-                      ? isFree ? "border-l-emerald-400" : "border-l-violet-400"
+                      ? isFree ? "border-l-emerald-400" : "border-l-teal-400"
                       : "border-l-amber-400";
 
                   return (
@@ -531,7 +531,7 @@ export default function SubcategoryPage() {
                   const borderAccent = attempted
                     ? "border-l-sky-400"
                     : !isLocked || pkgOwned
-                      ? isFree ? "border-l-emerald-400" : "border-l-violet-400"
+                      ? isFree ? "border-l-emerald-400" : "border-l-teal-400"
                       : "border-l-amber-400";
 
                   return (
@@ -608,7 +608,7 @@ export default function SubcategoryPage() {
                         owned
                           ? "border-emerald-300/70 shadow-lg shadow-emerald-100/50"
                           : isBest
-                            ? "border-violet-400/60 shadow-lg shadow-violet-100/60 ring-1 ring-violet-300/40"
+                            ? "border-teal-400/60 shadow-lg shadow-teal-100/60 ring-1 ring-teal-300/40"
                             : "border-border/60 shadow-md hover:shadow-lg"
                       }`}
                     >
@@ -617,7 +617,7 @@ export default function SubcategoryPage() {
                         owned
                           ? "bg-gradient-to-br from-emerald-50 to-teal-50/60"
                           : isBest
-                            ? "bg-gradient-to-br from-violet-50 to-indigo-50/60"
+                            ? "bg-gradient-to-br from-teal-50 to-blue-50/60"
                             : "bg-gradient-to-br from-muted/40 to-muted/10"
                       }`}>
                         <div className="flex items-start justify-between gap-2">
@@ -628,7 +628,7 @@ export default function SubcategoryPage() {
                               </span>
                             )}
                             {!owned && isBest && (
-                              <span className="mb-1.5 inline-flex items-center gap-1 rounded-full bg-violet-600 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">
+                              <span className="mb-1.5 inline-flex items-center gap-1 rounded-full bg-teal-600 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">
                                 <Zap className="h-2.5 w-2.5" /> Best Value
                               </span>
                             )}
@@ -678,7 +678,7 @@ export default function SubcategoryPage() {
                             owned
                               ? "bg-emerald-600 hover:bg-emerald-600 cursor-default"
                               : isBest
-                                ? "bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 shadow-sm"
+                                ? "bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 shadow-sm"
                                 : ""
                           }`}
                           disabled={owned}
@@ -700,7 +700,7 @@ export default function SubcategoryPage() {
                     { icon: <ShieldCheck className="h-3 w-3 text-emerald-600" />, text: "Detailed answer explanations" },
                     { icon: <RotateCcw className="h-3 w-3 text-sky-600" />,       text: "Unlimited retries" },
                     { icon: <Clock3 className="h-3 w-3 text-primary/70" />,       text: "Timed exam-like environment" },
-                    { icon: <Hash className="h-3 w-3 text-violet-500" />,         text: "Performance score & analytics" },
+                    { icon: <Hash className="h-3 w-3 text-teal-500" />,         text: "Performance score & analytics" },
                     { icon: <BookOpen className="h-3 w-3 text-amber-600" />,      text: "Full & sectional coverage" },
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-1.5 text-xs text-muted-foreground">
@@ -748,7 +748,7 @@ function TestActionButton({ isLocked, pkgOwned, pkg, activeSession, attempted, u
           <Button size="sm" variant="outline" className="rounded-lg border-muted-foreground/30 hover:border-foreground/40 font-medium" onClick={onStart}>
             <RotateCcw className="mr-1.5 h-3.5 w-3.5" />Retry
           </Button>
-          <Button size="sm" variant="outline" className="rounded-lg border-purple-300 text-purple-700 hover:bg-purple-50 font-medium" onClick={onReview}>
+          <Button size="sm" variant="outline" className="rounded-lg border-teal-300 text-teal-700 hover:bg-teal-50 font-medium" onClick={onReview}>
             <BookOpen className="mr-1.5 h-3.5 w-3.5" />Review
           </Button>
         </div>
@@ -809,7 +809,7 @@ function TestStatusBadge({ isFree, isLocked, pkgOwned, attempted }: TestStatusBa
     );
   }
   return (
-    <span className="inline-flex items-center gap-1 rounded-full bg-violet-50 px-2 py-0.5 text-[11px] font-medium text-violet-700">
+    <span className="inline-flex items-center gap-1 rounded-full bg-teal-50 px-2 py-0.5 text-[11px] font-medium text-teal-700">
       <ShieldCheck className="h-2.5 w-2.5" />Purchased
     </span>
   );
@@ -859,7 +859,7 @@ function ExamDescription({
       text: `Syllabus — ${examName} covers all major topics as per the latest official pattern.`,
     },
     {
-      icon: <LayoutGrid className="h-3.5 w-3.5 shrink-0 text-violet-500" />,
+      icon: <LayoutGrid className="h-3.5 w-3.5 shrink-0 text-teal-500" />,
       text: `Exam pattern — ${
         [fullLengthCount > 0 && `${fullLengthCount} full-length`, sectionalCount > 0 && `${sectionalCount} sectional`, topicWiseCount > 0 && `${topicWiseCount} topic-wise`]
           .filter(Boolean)

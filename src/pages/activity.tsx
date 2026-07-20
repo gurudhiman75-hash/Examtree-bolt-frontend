@@ -75,7 +75,7 @@ export default function ActivityPage() {
     return (
       <Card className="mx-auto max-w-xl">
         <CardContent className="flex min-h-80 flex-col items-center justify-center p-8 text-center">
-          <History className="h-10 w-10 text-indigo-600" />
+          <History className="h-10 w-10 text-blue-600" />
           <h1 className="mt-4 text-2xl font-bold">Your activity follows you across devices</h1>
           <p className="mt-2 text-sm leading-6 text-muted-foreground">Sign in to load canonical attempt history, scores, accuracy, and saved results.</p>
           <Button asChild className="mt-5"><Link href="/login/student?next=%2Fdashboard">Sign in</Link></Button>
@@ -96,8 +96,8 @@ export default function ActivityPage() {
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-        <Card><CardContent className="p-5"><Target className="h-5 w-5 text-indigo-600" /><p className="mt-4 text-2xl font-bold">{stats.count}</p><p className="text-sm text-muted-foreground">Real attempts</p></CardContent></Card>
-        <Card><CardContent className="p-5"><BarChart3 className="h-5 w-5 text-indigo-600" /><p className="mt-4 text-2xl font-bold">{stats.averageScore}%</p><p className="text-sm text-muted-foreground">Average score</p></CardContent></Card>
+        <Card><CardContent className="p-5"><Target className="h-5 w-5 text-blue-600" /><p className="mt-4 text-2xl font-bold">{stats.count}</p><p className="text-sm text-muted-foreground">Real attempts</p></CardContent></Card>
+        <Card><CardContent className="p-5"><BarChart3 className="h-5 w-5 text-blue-600" /><p className="mt-4 text-2xl font-bold">{stats.averageScore}%</p><p className="text-sm text-muted-foreground">Average score</p></CardContent></Card>
         <Card><CardContent className="p-5"><CheckCircle2 className="h-5 w-5 text-emerald-600" /><p className="mt-4 text-2xl font-bold">{stats.accuracy}%</p><p className="text-sm text-muted-foreground">Overall accuracy</p></CardContent></Card>
         <Card><CardContent className="p-5"><Clock3 className="h-5 w-5 text-amber-600" /><p className="mt-4 text-2xl font-bold">{stats.minutes}m</p><p className="text-sm text-muted-foreground">Practice time</p></CardContent></Card>
       </div>

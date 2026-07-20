@@ -9,13 +9,13 @@ import { Button } from "@/components/ui/button";
 import { CategoryIcon, isImageIcon } from "@/components/CategoryIcon";
 
 const CATEGORY_STYLES: Record<string, string> = {
-  blue: "linear-gradient(to right, #0ea5e9, #3b82f6, #6366f1)",
+  blue: "linear-gradient(to right, #0ea5e9, #3b82f6, #1a56db)",
   emerald: "linear-gradient(to right, #10b981, #14b8a6, #06b6d4)",
-  violet: "linear-gradient(to right, #8b5cf6, #d946ef, #ec4899)",
+  violet: "linear-gradient(to right, #0d9488, #1a56db, #06b6d4)",
   amber: "linear-gradient(to right, #f59e0b, #f97316, #f43f5e)",
   orange: "linear-gradient(to right, #f97316, #f59e0b, #eab308)",
   rose: "linear-gradient(to right, #f43f5e, #ec4899, #d946ef)",
-  indigo: "linear-gradient(to right, #6366f1, #3b82f6, #06b6d4)",
+  indigo: "linear-gradient(to right, #1a56db, #3b82f6, #06b6d4)",
   red: "linear-gradient(to right, #ef4444, #f43f5e, #f97316)",
 };
 
@@ -120,7 +120,7 @@ export default function CategoryPage() {
 
       {/* Category header — subtle hero banner */}
       <div className="mx-auto max-w-5xl px-4 pt-6 pb-2 sm:px-6">
-        <div className="rounded-2xl overflow-hidden border border-sky-100 bg-gradient-to-br from-sky-50 via-slate-50 to-indigo-50 px-5 py-6 shadow-sm">
+        <div className="rounded-2xl overflow-hidden border border-sky-100 bg-gradient-to-br from-sky-50 via-slate-50 to-blue-50 px-5 py-6 shadow-sm">
           <div className="flex items-start justify-between gap-4">
             <div className="min-w-0">
               <div className="inline-flex items-center rounded-full px-3 py-1 mb-3" style={{ backgroundImage: gradient }}>
@@ -143,7 +143,7 @@ export default function CategoryPage() {
             </div>
             <Button
               variant="outline"
-              className="shrink-0 rounded-xl border-violet-300 text-violet-700 hover:bg-violet-50 font-semibold hidden sm:flex text-[14px] px-4 h-auto py-2"
+              className="shrink-0 rounded-xl border-teal-300 text-teal-700 hover:bg-teal-50 font-semibold hidden sm:flex text-[14px] px-4 h-auto py-2"
               onClick={() => setLocation("/packages")}
             >
               <Package className="mr-1.5 h-4 w-4" />Buy Bundle
@@ -157,7 +157,7 @@ export default function CategoryPage() {
         {/* Mobile bundle CTA */}
         <Button
           variant="outline"
-          className="mb-6 w-full rounded-xl border-violet-300 text-violet-700 hover:bg-violet-50 font-semibold sm:hidden text-[14px]"
+          className="mb-6 w-full rounded-xl border-teal-300 text-teal-700 hover:bg-teal-50 font-semibold sm:hidden text-[14px]"
           onClick={() => setLocation("/packages")}
         >
           <Package className="mr-1.5 h-4 w-4" />Buy a Bundle & Save
@@ -225,7 +225,7 @@ export default function CategoryPage() {
                         </div>
                         <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-100">
                           <div
-                            className="h-full rounded-full bg-gradient-to-r from-sky-500 to-indigo-500"
+                            className="h-full rounded-full bg-gradient-to-r from-sky-500 to-blue-500"
                             style={{ width: `${Math.round((meta.attemptedCount / meta.totalCount) * 100)}%` }}
                           />
                         </div>

@@ -105,7 +105,7 @@ function masteryClass(mastery: number) {
     return "border-emerald-500 bg-emerald-500 text-white";
   }
   if (mastery >= 55) {
-    return "border-indigo-500 bg-indigo-500 text-white";
+    return "border-blue-500 bg-blue-500 text-white";
   }
   if (mastery >= 30) {
     return "border-amber-400 bg-amber-100 text-amber-900";
@@ -152,7 +152,7 @@ export function ConceptMasteryDashboard({
       <div className="rounded-md border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-black dark:text-zinc-100">
         <div className="mb-4 flex items-end justify-between gap-3">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-indigo-600">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-600">
               Concept Mastery
             </p>
             <h2 className="mt-1 text-lg font-semibold">
@@ -191,7 +191,7 @@ export function ConceptMasteryDashboard({
             Unstarted
           </span>
           <span className="inline-flex items-center gap-1">
-            <i className="h-2.5 w-2.5 rounded-sm bg-indigo-500" />
+            <i className="h-2.5 w-2.5 rounded-sm bg-blue-500" />
             Developing
           </span>
           <span className="inline-flex items-center gap-1">
@@ -202,7 +202,7 @@ export function ConceptMasteryDashboard({
       </div>
 
       <aside className="rounded-md border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-indigo-600">
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-600">
           Logic Accuracy
         </p>
         <div className="mt-4 space-y-3">
@@ -217,7 +217,7 @@ export function ConceptMasteryDashboard({
                   <span className="text-xs font-medium text-zinc-500">
                     {metric.label}
                   </span>
-                  <Icon className="h-4 w-4 text-indigo-600" />
+                  <Icon className="h-4 w-4 text-blue-600" />
                 </div>
                 <p className="mt-2 text-2xl font-semibold tracking-tight">
                   {metric.value}

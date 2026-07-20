@@ -34,7 +34,7 @@ export default function ReportQuestion() {
           <Textarea className="mt-1 min-h-32 rounded-md bg-white" placeholder="Describe what looks incorrect and attach context if available." />
         </div>
         <div className="lg:col-span-2">
-          <Button type="button" className="rounded-md bg-[#1e1b4b] text-white hover:bg-indigo-950">
+          <Button type="button" className="rounded-md bg-slate-900 text-white hover:bg-slate-800">
             <Send className="mr-2 h-4 w-4" />
             Submit report
           </Button>

@@ -316,7 +316,7 @@ export default function LogicPlayback({
     <section className={cn("overflow-hidden rounded-md border border-slate-800 bg-slate-950 text-slate-100", className)}>
       <div className="flex flex-col gap-3 border-b border-slate-800 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-300">Logic Playback</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-300">Logic Playback</p>
           <p className="mt-1 text-sm text-slate-400">
             Step {boundedStep} of {Math.max(totalSteps, 1)}
           </p>
@@ -329,7 +329,7 @@ export default function LogicPlayback({
               className={cn(
                 "min-h-11 rounded px-3 text-xs font-semibold transition",
                 currentLang === lang
-                  ? "bg-indigo-600 text-white"
+                  ? "bg-blue-600 text-white"
                   : "text-slate-300 hover:bg-slate-800 hover:text-white",
               )}
               onClick={() => onLanguageChange?.(lang)}
@@ -422,7 +422,7 @@ export default function LogicPlayback({
                 y1={activeConnectorPoints[0].y}
                 x2={activeConnectorPoints[1].x}
                 y2={activeConnectorPoints[1].y}
-                stroke="#6366f1"
+                stroke="#3b82f6"
                 strokeWidth="4"
                 strokeLinecap="round"
                 opacity="0.58"
@@ -448,7 +448,7 @@ export default function LogicPlayback({
                         cy={point.y}
                         r={29 * seatScale(point, baseDiagram)}
                         fill="none"
-                        stroke="#6366f1"
+                        stroke="#3b82f6"
                         strokeWidth="3"
                         filter="url(#logic-playback-glow)"
                         animate={{ opacity: [0.35, 0.9, 0.35], scale: [1, 1.08, 1] }}
@@ -462,7 +462,7 @@ export default function LogicPlayback({
                         height="60"
                         rx="10"
                         fill="none"
-                        stroke="#6366f1"
+                        stroke="#3b82f6"
                         strokeWidth="3"
                         filter="url(#logic-playback-glow)"
                         animate={{ opacity: [0.35, 0.9, 0.35], scale: [1, 1.05, 1] }}
@@ -475,14 +475,14 @@ export default function LogicPlayback({
                       cx={point.x}
                       cy={point.y}
                       r={22 * seatScale(point, baseDiagram)}
-                      fill={point.highlighted ? "#4f46e5" : "#1e3a8a"}
+                      fill={point.highlighted ? "#1a56db" : "#1e3a8a"}
                       stroke="#bfdbfe"
                       strokeWidth="1.5"
                     />
                   ) : (
                     <path
                       d={`M ${point.x - 29} ${point.y + 23} L ${point.x - 29} ${point.y - 11} Q ${point.x - 29} ${point.y - 28} ${point.x - 12} ${point.y - 28} L ${point.x + 12} ${point.y - 28} Q ${point.x + 29} ${point.y - 28} ${point.x + 29} ${point.y - 11} L ${point.x + 29} ${point.y + 23}`}
-                      fill={point.highlighted ? "#4f46e5" : "#1e3a8a"}
+                      fill={point.highlighted ? "#1a56db" : "#1e3a8a"}
                       stroke="#bfdbfe"
                       strokeWidth="1.5"
                     />
@@ -519,7 +519,7 @@ export default function LogicPlayback({
                 className={cn(
                   "relative z-10 h-3 w-3 rounded-full border transition",
                   step <= boundedStep
-                    ? "border-indigo-400 bg-indigo-500 shadow-[0_0_0_3px_rgba(99,102,241,0.18)]"
+                    ? "border-blue-400 bg-blue-500 shadow-[0_0_0_3px_rgba(30,86,219,0.18)]"
                     : "border-slate-600 bg-slate-900 hover:border-slate-400",
                 )}
                 onClick={() => setCurrentStep(step)}
@@ -528,7 +528,7 @@ export default function LogicPlayback({
           </div>
           <input
             aria-label="Logic playback step"
-            className="h-2 w-full accent-indigo-500"
+            className="h-2 w-full accent-blue-500"
             min={0}
             max={Math.max(totalSteps, 0)}
             step={1}
@@ -548,7 +548,7 @@ export default function LogicPlayback({
             </button>
             <button
               type="button"
-              className="inline-flex min-h-12 items-center gap-2 rounded-md bg-blue-950 px-3 text-sm font-semibold text-white transition ring-1 ring-indigo-500/60 hover:bg-blue-900 disabled:cursor-not-allowed disabled:opacity-40"
+              className="inline-flex min-h-12 items-center gap-2 rounded-md bg-blue-950 px-3 text-sm font-semibold text-white transition ring-1 ring-blue-500/60 hover:bg-blue-900 disabled:cursor-not-allowed disabled:opacity-40"
               disabled={!canMoveNext}
               onClick={() => setCurrentStep((step) => Math.min(totalSteps, step + 1))}
             >

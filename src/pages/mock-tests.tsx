@@ -30,7 +30,7 @@ export default function MockTestsHub() {
                 <h3 className="font-semibold text-slate-950">{test.name}</h3>
                 <p className="mt-1 text-xs text-slate-500">{test.category} / {test.subcategoryName ?? "General"}</p>
               </div>
-              <span className="rounded-md border border-indigo-200 bg-indigo-50 px-2 py-1 text-[11px] font-semibold text-indigo-700">
+              <span className="rounded-md border border-blue-200 bg-blue-50 px-2 py-1 text-[11px] font-semibold text-blue-700">
                 {(test.access ?? "free") === "free" ? "Free" : "Premium"}
               </span>
             </div>

@@ -156,7 +156,7 @@ export function PracticeDiscovery({
     >
       <div className="mb-3 flex items-center justify-between gap-2">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-indigo-600">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-600">
             Practice Categories
           </p>
           <h3 className="text-sm font-semibold">
@@ -212,7 +212,7 @@ export function PracticeDiscovery({
                 Number(event.target.value),
               )
             }
-            className="mt-2 w-full accent-indigo-600"
+            className="mt-2 w-full accent-blue-600"
           />
         </label>
 
@@ -252,7 +252,7 @@ export function PracticeDiscovery({
           >
             <AccordionTrigger className="py-2 text-sm hover:no-underline">
               <span className="inline-flex items-center gap-2">
-                <BrainCircuit className="h-4 w-4 text-indigo-600" />
+                <BrainCircuit className="h-4 w-4 text-blue-600" />
                 {group}
               </span>
             </AccordionTrigger>
@@ -282,7 +282,7 @@ export function PracticeDiscovery({
                       </span>
                       <span className="flex items-center gap-1">
                         {category.isNew ? (
-                          <span className="rounded-sm bg-indigo-100 px-1.5 py-0.5 text-[10px] font-semibold text-indigo-700">
+                          <span className="rounded-sm bg-blue-100 px-1.5 py-0.5 text-[10px] font-semibold text-blue-700">
                             New
                           </span>
                         ) : null}
